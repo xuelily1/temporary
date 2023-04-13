@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浏览器信息</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            /* padding: 50px; */
+        }
+    </style>
+</head>
+<body>
+    <h1>浏览器信息</h1>
+    <p>宽度：<span id="width"></span>px</p>
+    <p>高度：<span id="height"></span>px</p>
+    <p>分辨率：<span id="resolution"></span></p>
+
+    <script>
+        function displayBrowserInfo() {
+            const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+            const resolution = window.devicePixelRatio;
+
+            document.getElementById('width').innerText = width;
+            document.getElementById('height').innerText = height;
+            document.getElementById('resolution').innerText = resolution;
+        }
+
+        window.addEventListener('load', displayBrowserInfo);
+        window.addEventListener('resize', displayBrowserInfo);
+    </script>
+</body>
+</html>
